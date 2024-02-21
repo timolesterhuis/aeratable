@@ -46,7 +46,7 @@ requirements = ["pyperclip", "tabulate", "click"]  # TODO: add requirements (do 
 
 setup(
     name="aeratable",
-    version="0.1.0",    
+    version="0.2.0",    
     author="Timo Lesterhuis",
     author_email="timolesterhuis@gmail.com",
     description="Nicely format Aera interface-output to a table in ASCII or CSV format.",
