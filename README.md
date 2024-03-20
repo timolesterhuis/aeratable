@@ -49,5 +49,18 @@ simple! use the ``-f`` or ``--fmt`` flag with the value ``csv``:
     aeratable  -f csv
 ```
 
+### Interactive mode
+
+The `-i` or `--interactive` flag can be used to enter the interactive mode. In this mode, you can union multiple tables together. This is usefull if you have a SQL script that outputs more than 250 rows (which is the Aera interface limit). The interactive mode will prompt you with the question to copy the next interface-output to your clipboard. The script will then append the new table to the previous one when you enter `y`. This can be repeated as many times as you like. The final table will be copied to the clipboard when you provide `f` (for finished).
+
+```bash
+    aeratable -i
+    # the above command will prompt you with the following question:
+    # Can we take the next interface output from your clipboard? [y/n/f]:
+``` 
+
+The nice part about the interactive mode is that it will check the headers of the tables to make sure they are the same. This prevents you from making mistakes when unioning tables together.
+
+
 
 Happy SQL!

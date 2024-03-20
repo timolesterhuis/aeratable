@@ -27,6 +27,7 @@ def parse_data(raw_data: str):
 @click.option('--csv-seperator', default=';', help='seperator to use for CSV output. default is ;')
 @click.option('--ascii-style', default='presto', help='Style of the ascii table. Default is presto.')
 def main(fmt, verbose, interactive, csv_seperator, ascii_style):
+    """aeratable (v0.2.1): Nicely format Aera interface-output to a table in ASCII or CSV format."""
     if interactive:
 
         existing_header = ""
@@ -48,6 +49,7 @@ def main(fmt, verbose, interactive, csv_seperator, ascii_style):
                         click.echo("Different headers! Please make sure you maintain the same table structure")
                     else:
                         existing_col_data += col_data
+                        click.echo(f"Added {len(col_data)} rows to the table. Total rows: {len(existing_col_data)}")
                 else:
                     existing_header = header
                     existing_col_data = col_data
